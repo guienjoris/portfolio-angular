@@ -28,7 +28,7 @@ export class AppComponent implements OnInit {
 this.myParams = {
   particles: {
     number: {
-      value: 80,
+      value: 60,
       density: {
         enable: true,
         value_area: 800
@@ -81,7 +81,7 @@ this.myParams = {
     },
     move: {
       enable: true,
-      speed: 6,
+      speed: 3,
       direction: "none",
       random: false,
       straight: false,
@@ -122,7 +122,7 @@ this.myParams = {
         speed: 3
       },
       repulse: {
-        distance: 200,
+        distance: 100,
         duration: 0.4
       },
       push: {
