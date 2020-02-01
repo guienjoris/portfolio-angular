@@ -1,0 +1,12 @@
+<particles [style]="myStyle" [width]="width" [height]="height" [params]="myParams"></particles>
+<h1 class="line-1 anim-typewriter"> Guien Joris Développeur Web <i class="material-icons" (click)="displayText()">
+  play_arrow
+  </i>  </h1>
+<div *ngIf="displayTextStatus===true" class="about_me">
+  <i class="material-icons close_button" (click)="displayText()">
+    highlight_off
+  </i>
+  <p>Jeune développeur Web, passionné de nouvelles technologies principalement orienté Web comme Angular / Node ,
+    mais aussi amateur de cinéma et de musique. </p>
+    <p> J'aime aussi également l'escalade et le sport en général.</p>
+</div>

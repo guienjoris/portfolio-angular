@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css?family=Poiret+One&display=swap');
+
+h1{
+    color:white;
+    font-family: 'Poiret One', cursive;
+    text-shadow: 1px 1px 5px white;
+}
+.line-1{
+    position: relative;
+    width: 20em;
+    margin-top: 10%;
+    border-right: 2px solid rgba(255,255,255,.75);
+    font-size: 380%;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+/* Animation */
+.anim-typewriter{
+  animation: typewriter 4s steps(44) 1s 1 normal both,
+             blinkTextCursor 500ms steps(44) infinite normal;
+}
+@keyframes typewriter{
+  from{width: 0;}
+  to{width: 14em;}
+}
+@keyframes blinkTextCursor{
+  from{border-right-color: rgba(255,255,255,.75);}
+  to{border-right-color: transparent;}
+}
+.material-icons {
+    font-family: 'Material Icons';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 50px;  /* Preferred icon size */
+    &:hover{
+        cursor: grab;
+    }
+}
+.about_me{
+    background-color: rgba(255,255,255,0.5);
+    width:80%;
+    margin-left:50%;
+    transform: translate(-50%);
+    border-radius: 10px;
+    padding:5%;
+    box-shadow:5px 5px 10px white;
+    animation-duration: 2s;
+    animation-name: opacityBlock;
+    p{
+        font-family: 'Poiret One', cursive;
+        font-size: 250%;
+        font-weight:normal;
+    }
+    .close_button{
+        &:hover{
+        text-shadow: 1px 2px 2px black;
+        }
+    }
+}
+
+@keyframes opacityBlock{
+    from{
+        opacity:0;
+    }
+    to{
+        opacity:1
+    }
+}
