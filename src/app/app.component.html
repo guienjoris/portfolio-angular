@@ -1,5 +1,9 @@
 
-  <a routerLink="/menu" class="menu">Menu</a>
+  <a routerLink="/menu" class="menu"  >Menu</a>
+  <div *ngIf="currentComponentStatus===true">
+  <i  class="material-icons" (click)="backClicked()">
+    close
+    </i>
+  </div>
 
-
-<router-outlet></router-outlet>
+<router-outlet (activate)="onActivate($event)"></router-outlet>

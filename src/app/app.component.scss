@@ -7,3 +7,15 @@
         text-shadow:1px 1px 10px white ;
     }
 }
+.material-icons {
+    font-family: 'Material Icons';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 50px;  /* Preferred icon size */
+    color:white;
+    float:right;
+    &:hover{
+        cursor: grab;
+        text-shadow: 2px 2px 2px red;
+    }
+}
