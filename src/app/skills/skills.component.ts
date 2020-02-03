@@ -1,27 +1,19 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-accueil',
-  templateUrl: './accueil.component.html',
-  styleUrls: ['./accueil.component.scss']
+  selector: 'app-skills',
+  templateUrl: './skills.component.html',
+  styleUrls: ['./skills.component.scss']
 })
-export class AccueilComponent implements OnInit {
+export class SkillsComponent implements OnInit {
   myStyle: object = {};
-    myParams: object = {};
-    width: number = 100;
-    height: number = 100;
-    displayTextStatus: boolean = false;
-    
-    displayText(){
-      if(this.displayTextStatus === false){
-      this.displayTextStatus = true;
-      }else{
-        this.displayTextStatus = false;
-      }
-    }
+  myParams: object = {};
+  width: number = 100;
+  height: number = 100;
+
   constructor() { }
 
-  ngOnInit(){
+  ngOnInit() {
     this.myStyle = {
       'background-color':'#000520',
       'position': 'fixed',
@@ -145,5 +137,3 @@ retina_detect: true
 }
   }
 }
-
-

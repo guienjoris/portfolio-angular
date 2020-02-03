@@ -36,6 +36,8 @@ h1{
     font-size: 50px;  /* Preferred icon size */
     &:hover{
         cursor: grab;
+        text-shadow: 2px 2px 2px green;
+
     }
 }
 .about_me{
@@ -55,7 +57,7 @@ h1{
     }
     .close_button{
         &:hover{
-        text-shadow: 1px 2px 2px black;
+        text-shadow: 1px 2px 2px red;
         }
     }
 }
