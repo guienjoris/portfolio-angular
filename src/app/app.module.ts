@@ -8,6 +8,7 @@ import { ParticlesModule } from 'angular-particle';
 import { MenuComponent } from './menu/menu.component';
 import { AccueilComponent } from './accueil/accueil.component';
 import { SkillsComponent } from './skills/skills.component';
+import { AboutComponent } from './about/about.component';
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import { SkillsComponent } from './skills/skills.component';
     AppComponent,
     MenuComponent,
     AccueilComponent,
-    SkillsComponent
+    SkillsComponent,
+    AboutComponent
   ],
   imports: [
     BrowserAnimationsModule,

@@ -3,7 +3,8 @@
     font-family:'Poiret One', cursive;
     font-weight:bold;
     text-decoration: none;
-    font-size:150%;
+    font-size:200%;
+    margin-left:1%;
     &:hover{
         text-shadow:1px 1px 10px white ;
     }
@@ -14,7 +15,7 @@
     font-style: normal;
     font-size: 50px;  /* Preferred icon size */
     color:white;
-    float:right;
+    float:left;
     &:hover{
         cursor: grab;
         text-shadow: 2px 2px 2px red;

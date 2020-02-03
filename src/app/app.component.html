@@ -1,5 +1,6 @@
+<particles [style]="myStyle" [width]="width" [height]="height" [params]="myParams"></particles>
 
-  <a routerLink="/menu" class="menu"  >Menu</a>
+  <a routerLink="/menu" *ngIf="currentComponentStatus===false" class="menu"  >Menu</a>
   <div *ngIf="currentComponentStatus===true">
   <i  class="material-icons" (click)="backClicked()">
     close
