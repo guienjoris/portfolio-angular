@@ -9,6 +9,12 @@ import { MenuComponent } from './menu/menu.component';
 import { AccueilComponent } from './accueil/accueil.component';
 import { SkillsComponent } from './skills/skills.component';
 import { AboutComponent } from './about/about.component';
+import { ContactComponent } from './contact/contact.component';
+
+import {MatInputModule} from '@angular/material/input';
+import { FormsModule,ReactiveFormsModule } from '@angular/forms';
+import {MatButtonModule} from '@angular/material/button';
+
 
 
 @NgModule({
@@ -17,13 +23,18 @@ import { AboutComponent } from './about/about.component';
     MenuComponent,
     AccueilComponent,
     SkillsComponent,
-    AboutComponent
+    AboutComponent,
+    ContactComponent
   ],
   imports: [
     BrowserAnimationsModule,
+    FormsModule,
     BrowserModule,
     AppRoutingModule,
-    ParticlesModule
+    ParticlesModule,
+    MatInputModule,
+    ReactiveFormsModule,
+    MatButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,0 +1,30 @@
+#contact{
+    text-align:center;
+    color:white;
+    margin-top:3%;
+    background-color: rgba(255,255,255,0.5);
+    border-radius:10px;
+    box-shadow:5px 5px 10px black;
+    width:60%;
+    padding:2%;
+    margin-left:50%;
+    transform: translate(-50%);
+    font-family: 'Poiret One', cursive;
+
+    h1{
+        font-size:350%;
+        &:first-letter{
+            color:#000520;
+            font-size:200%;
+            
+        }
+        transition:0.5s;
+            &:hover{
+                transform:scale(1.5)
+            }
+        text-shadow:1px 1px 5px white;
+    }
+}
+.example-full-width{
+    width:80%;
+}

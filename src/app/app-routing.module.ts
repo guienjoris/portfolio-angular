@@ -5,6 +5,7 @@ import { MenuComponent } from './menu/menu.component';
 import { AccueilComponent } from './accueil/accueil.component';
 import { SkillsComponent } from './skills/skills.component';
 import { AboutComponent } from './about/about.component';
+import { ContactComponent } from './contact/contact.component';
 
 
 const routes: Routes = [
@@ -12,6 +13,7 @@ const routes: Routes = [
   {path:'menu', component: MenuComponent, data:{animation:"menu"}},
   {path:'skills', component:SkillsComponent},
   {path:'about', component: AboutComponent},
+  {path:'contact', component: ContactComponent},
 ];
 
 @NgModule({

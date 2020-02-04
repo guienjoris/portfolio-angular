@@ -1,0 +1,32 @@
+
+<div id="contact">
+    <h1>Contact</h1>
+    <form>
+        <mat-form-field class="example-full-width">
+            <input matInput placeholder="Name" name="name" >
+          </mat-form-field>
+          <mat-form-field class="example-full-width">
+            <input matInput placeholder="Email" [formControl]="emailFormControl"
+                   [errorStateMatcher]="matcher">
+            <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
+              Entrez une addresse mail valide!
+            </mat-error>
+            <mat-error *ngIf="emailFormControl.hasError('required')">
+              Email est <strong>obligatoire</strong>
+            </mat-error>
+          </mat-form-field>
+          <mat-form-field class='example-full-width'>
+            <textarea cdkTextareaAutosize
+            cdkAutosizeMinRows="10"
+            cdkAutosizeMaxRows="25"
+            matInput type="text"  
+            placeholder="Message ..." 
+            name="message" 
+            ></textarea>
+            </mat-form-field>
+            <div>
+            <button mat-raised-button color="primary" type="submit">Envoyer</button>
+        </div>
+
+    </form>
+</div>

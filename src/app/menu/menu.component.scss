@@ -1,5 +1,6 @@
-.container_menu{
-    width:100%;
+
+#container_menu{
+    width:90%;
     a{
         width:100%;
         padding:1%;
@@ -11,7 +12,45 @@
         display:flex;
         justify-content: center;
         &:hover{
-            text-shadow:3px 1px 10px white ;
+            color: orangered;
+            text-shadow:3px 1px 10px orangered;
         }
+    }
+}
+#container_link{
+    position:absolute;
+    bottom:0;
+    width:100%;
+    ul{
+    width:30%;
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    li,a{
+        font-family: 'Poiret One', cursive;
+        text-decoration:none;
+        list-style-type: none;
+        color:white;
+        font-size:130%;
+        margin:1%;
+    }
+    .linkedin{
+        &:hover{
+            color:#3e3efd;
+            text-shadow:3px 1px 10px #3e3efd ;
+        }
+    }
+    .git{
+        &:hover{
+            color: gray;
+            text-shadow:3px 1px 10px gray;
+        }
+    }
+    .insta{
+        &:hover{
+            color: orangered;
+            text-shadow:3px 1px 10px orangered;
+        }
+    }
     }
 }
