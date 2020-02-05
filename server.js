@@ -3,6 +3,7 @@ const app = express()
 const port = 3000
 var dotenv = require('dotenv').config({path: 'private.env'})
 var cors = require('cors');
+const path = require('path');
 
 
 var mailer = require('nodemailer');
@@ -16,7 +17,11 @@ var transport = mailer.createTransport(smtpTransport({
     app.use(express.json());
     app.use(cors());
 
-
+app.use(express.static(__dirname + '/dist/portfolio-angular'));
+app.get('/*', function(req,res) {
+    
+    res.sendFile(path.join(__dirname+'/dist/portfolio-angular/index.html'));
+    });
 app.post('/contact',(req,res)=>{
     console.log(req.body)
     let mailuser = req.body.mail;
