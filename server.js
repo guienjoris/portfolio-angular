@@ -1,6 +1,5 @@
 const express = require('express')
 const app = express()
-const port = 3000
 var dotenv = require('dotenv').config({path: 'private.env'})
 var cors = require('cors');
 const path = require('path');
@@ -64,4 +63,4 @@ app.post('/contact',(req,res)=>{
     })
 })
 
-app.listen(process.env.PORT || 3000, () => console.log(`Example app listening on port:${port} !`))
+app.listen(process.env.PORT || 8080)
