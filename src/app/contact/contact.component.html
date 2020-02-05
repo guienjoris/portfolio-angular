@@ -28,10 +28,15 @@
             <div>
             <button mat-raised-button color="primary" type="submit" (click)="sendMail()">Envoyer</button>
         </div>
-
+        <div *ngIf="mailStatus === true">
+          <p class="emailConfirmation">Votre mail a bien été envoyé <i class="material-icons close" (click)="close()">close
+          </i> </p>
+          
+        </div>
     </form>
+    
     <p>Sinon vous pouvez m'envoyer un mail directement en cliquant en dessous: </p>
-    <a href="mailto:guienjoris@gmail.com"><i class="material-icons">
+    <a href="mailto:guienjoris@gmail.com"><i class="material-icons mail">
       mail
       </i></a>
 </div>

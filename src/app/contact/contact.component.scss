@@ -27,7 +27,7 @@
     p{
         color:black;
     }
-    .material-icons{
+    .mail{
         font-family: 'Material Icons';
     font-weight: normal;
     font-style: normal;
@@ -40,6 +40,39 @@
     }
     }
 }
+.emailConfirmation{
+    width:40%;
+    border-radius: 5px;
+    padding:1%;
+    background-color: rgba(51, 204, 51,0.5);
+    box-shadow:1px 1px 1px white;
+    margin-left:50%;
+    transform:translate(-50%);
+    animation-duration: 0.5s;
+    animation-name: opacityBlock;
+    font-weight:bold;
+    
+}
+.close{
+    font-family: 'Material Icons';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 20px;  
+    float:right;
+    &:hover{
+    text-shadow: 1px 2px 2px red;
+    cursor:grab;
+    }
+}
+
 .example-full-width{
     width:80%;
+}
+@keyframes opacityBlock{
+    from{
+        opacity:0;
+    }
+    to{
+        opacity:1
+    }
 }

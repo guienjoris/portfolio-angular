@@ -21,7 +21,7 @@ export class ContactComponent implements OnInit {
     Validators.email,
   ]);
   matcher = new MyErrorStateMatcher();
-
+  mailStatus: boolean = false;
   credentials: Contact={
     name: '',
     mail: '',
@@ -33,6 +33,11 @@ export class ContactComponent implements OnInit {
       this.contactApi.mailer(this.credentials).subscribe(data =>{
         console.log(data)
       })
+      this.mailStatus= true;
+
+  }
+  close(){
+    this.mailStatus = false;
   }
   ngOnInit() {
   }
