@@ -19,6 +19,14 @@
         margin-left:48%;
         transform: translate(-48%);
     }
+    #container_parcours{
+        transition:0.5s;
+        h2,li{
+            &:hover{
+                transform:scale(1.2)
+            }
+        }
+    }
 video{
     width:500px;
     height:250px;
@@ -57,18 +65,28 @@ video{
 }
 h1{
     font-size:350%;
+    transition:0.5s;
+
     &:first-letter{
         color:#000520;
         font-size:200%;
         
     }
+    &:hover{
+        transform:scale(1.5)
+    }
     text-shadow:1px 1px 5px white;
 }
 h2{
     font-size:200%;
+    transition:0.5s;
+
     &:first-letter{
         color:#000520;
         font-size:200%;
+    }
+    &:hover{
+        transform:scale(1.3)
     }
 }
 ul{
