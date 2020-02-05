@@ -3,13 +3,13 @@
     <h1>Contact</h1>
     <form>
         <mat-form-field class="example-full-width">
-            <input matInput placeholder="Name" name="name" >
+            <input matInput placeholder="Name" name="name" [(ngModel)]="credentials.name" >
           </mat-form-field>
           <mat-form-field class="example-full-width">
-            <input matInput placeholder="Email" [formControl]="emailFormControl"
-                   [errorStateMatcher]="matcher">
+            <input matInput placeholder="Email (Pour vous envoyez une copie du mail)" [formControl]="emailFormControl"
+                   [errorStateMatcher]="matcher" [(ngModel)]="credentials.mail">
             <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
-              Entrez une addresse mail valide!
+              Entrez une adresse mail valide!
             </mat-error>
             <mat-error *ngIf="emailFormControl.hasError('required')">
               Email est <strong>obligatoire</strong>
@@ -21,12 +21,17 @@
             cdkAutosizeMaxRows="25"
             matInput type="text"  
             placeholder="Message ..." 
-            name="message" 
+            name="message"
+            [(ngModel)]="credentials.message" 
             ></textarea>
             </mat-form-field>
             <div>
-            <button mat-raised-button color="primary" type="submit">Envoyer</button>
+            <button mat-raised-button color="primary" type="submit" (click)="sendMail()">Envoyer</button>
         </div>
 
     </form>
+    <p>Sinon vous pouvez m'envoyer un mail directement en cliquant en dessous: </p>
+    <a href="mailto:guienjoris@gmail.com"><i class="material-icons">
+      mail
+      </i></a>
 </div>

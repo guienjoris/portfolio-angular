@@ -14,6 +14,7 @@ import { ContactComponent } from './contact/contact.component';
 import {MatInputModule} from '@angular/material/input';
 import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import {MatButtonModule} from '@angular/material/button';
+import { HttpClientModule } from '@angular/common/http';
 
 
 
@@ -31,6 +32,7 @@ import {MatButtonModule} from '@angular/material/button';
     FormsModule,
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule,
     ParticlesModule,
     MatInputModule,
     ReactiveFormsModule,

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {FormControl, FormGroupDirective, NgForm, Validators} from '@angular/forms';
 import {ErrorStateMatcher} from '@angular/material/core';
+import { ContactService, Contact} from '../service/contact.service';
 
 /** Error when invalid control is dirty, touched, or submitted. */
 export class MyErrorStateMatcher implements ErrorStateMatcher {
@@ -19,10 +20,20 @@ export class ContactComponent implements OnInit {
     Validators.required,
     Validators.email,
   ]);
-
   matcher = new MyErrorStateMatcher();
-  constructor() { }
 
+  credentials: Contact={
+    name: '',
+    mail: '',
+    message:''
+  }
+
+  constructor(private contactApi:ContactService) { }
+  sendMail(){
+      this.contactApi.mailer(this.credentials).subscribe(data =>{
+        console.log(data)
+      })
+  }
   ngOnInit() {
   }
 
