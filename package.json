@@ -10,7 +10,6 @@
     "e2e": "ng e2e",
     "heroku-postbuild": "ng build --prod"
   },
-  
   "private": true,
   "dependencies": {
     "@angular/animations": "~8.2.13",
@@ -28,6 +27,7 @@
     "cors": "^2.8.5",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
+    "material-design-icons": "^3.0.1",
     "nodemailer": "^6.4.2",
     "nodemailer-smtp-transport": "^2.7.4",
     "path": "^0.12.7",
