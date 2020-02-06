@@ -34,7 +34,7 @@ h1{
     font-weight: normal;
     font-style: normal;
     font-size: 50px;  /* Preferred icon size */
-    &:hover{
+    .play &:hover{
         cursor: grab;
         text-shadow: 2px 2px 2px green;
 
