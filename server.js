@@ -37,7 +37,6 @@ app.post('/contact-post',(req,res)=>{
         }else{
             console.log('Email envoyé avec succès!')
         }
-        transport.close();
     })
     let mailCopy = {
         from:'guienjoris@gmail.com',
@@ -55,7 +54,6 @@ app.post('/contact-post',(req,res)=>{
         }else{
             console.log('Email envoyé avec succès!')
         }
-        transport.close();
     })
 })
 
