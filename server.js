@@ -39,24 +39,24 @@ app.post('/contact-post',(req,res)=>{
         }
         transport.close();
     })
-    let mailCopy = {
-        from:'guienjoris@gmail.com',
-        to: req.body.mail,
-        subject: ' Copie du mail de contact Portfolio de Guien Joris',
-        html: `<p>Ceci est un mail de copie:" </p>
-        <p>Message:</p> ${req.body.message} 
-        <p>De: </p> ${req.body.name} 
-        <p> Adresse email: </p> ${req.body.mail} <p>"</p>`
-    }
-    transport.sendMail(mailCopy,(error,res,req)=>{
-        if(error){
-            console.log("Erreur lors de l'envoi de l'email");
-            console.log(error)
-        }else{
-            console.log('Email envoyé avec succès!')
-        }
-        transport.close();
-    })
+    // let mailCopy = {
+    //     from:'guienjoris@gmail.com',
+    //     to: req.body.mail,
+    //     subject: ' Copie du mail de contact Portfolio de Guien Joris',
+    //     html: `<p>Ceci est un mail de copie:" </p>
+    //     <p>Message:</p> ${req.body.message} 
+    //     <p>De: </p> ${req.body.name} 
+    //     <p> Adresse email: </p> ${req.body.mail} <p>"</p>`
+    // }
+    // transport.sendMail(mailCopy,(error,res,req)=>{
+    //     if(error){
+    //         console.log("Erreur lors de l'envoi de l'email");
+    //         console.log(error)
+    //     }else{
+    //         console.log('Email envoyé avec succès!')
+    //     }
+    //     transport.close();
+    // })
 })
 
 app.listen(process.env.PORT || 8080)
