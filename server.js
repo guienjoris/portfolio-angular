@@ -21,7 +21,7 @@ app.get('/*', function(req,res) {
     
     res.sendFile(path.join(__dirname+'/dist/portfolio-angular/index.html'));
     });
-app.post('/contact',(req,res)=>{
+app.post('/contact-post',(req,res)=>{
     console.log(req.body)
     let mailuser = req.body.mail;
     let nameuser = req.body.name;
