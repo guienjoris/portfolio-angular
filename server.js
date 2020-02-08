@@ -22,17 +22,13 @@ app.get('/*', function(req,res) {
     res.sendFile(path.join(__dirname+'/dist/portfolio-angular/index.html'));
     });
 app.post('/contact-post',(req,res)=>{
-    console.log(req.body)
-    let mailuser = req.body.mail;
-    let nameuser = req.body.name;
-    let message = req.body.message;
     let mailContentMe={
-        from: mailuser,
+        from: req.body.mail,
         to: 'guienjoris@gmail.com',
         subject: 'Contact Portfolio',
-        html: `<p>Message:</p> ${message} 
-        <p>De: </p> ${nameuser} 
-        <p> Adresse email: </p> ${mailuser} `
+        html: `<p>Message:</p> ${req.body.message} 
+        <p>De: </p> ${req.body.name} 
+        <p> Adresse email: </p> ${req.body.mail} `
     }
     transport.sendMail(mailContentMe,(error,res,req)=>{
         if(error){
@@ -45,12 +41,12 @@ app.post('/contact-post',(req,res)=>{
     })
     let mailCopy = {
         from:'guienjoris@gmail.com',
-        to: mailuser,
+        to: req.body.mail,
         subject: ' Copie du mail de contact Portfolio de Guien Joris',
         html: `<p>Ceci est un mail de copie:" </p>
-        <p>Message:</p> ${message} 
-        <p>De: </p> ${nameuser} 
-        <p> Adresse email: </p> ${mailuser} <p>"</p>`
+        <p>Message:</p> ${req.body.message} 
+        <p>De: </p> ${req.body.name} 
+        <p> Adresse email: </p> ${req.body.mail} <p>"</p>`
     }
     transport.sendMail(mailCopy,(error,res,req)=>{
         if(error){
