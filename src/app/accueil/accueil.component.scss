@@ -71,3 +71,31 @@ h1{
         opacity:1
     }
 }
+@media screen and (max-width: 1000px){
+    .line-1{
+        position: relative;
+        width: 20em;
+        margin-top: 20%;
+        border-right: 2px solid rgba(255,255,255,.75);
+        font-size: 170%;
+        text-align: center;
+        white-space: nowrap;
+        overflow: hidden;
+    }
+    .material-icons {
+        font-family: 'Material Icons';
+        font-weight: normal;
+        font-style: normal;
+        font-size: 24px;  /* Preferred icon size */
+        .play &:hover{
+            cursor: grab;
+            text-shadow: 2px 2px 2px green;
+    
+        }
+    }
+    .about_me{
+        p{
+            font-size:150%;
+        }
+    }
+}

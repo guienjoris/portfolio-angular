@@ -6,7 +6,7 @@
     border-radius:10px;
     box-shadow:5px 5px 10px black;
     width:60%;
-    padding:2%;
+    padding:1%;
     margin-left:50%;
     transform: translate(-50%);
     font-family: 'Poiret One', cursive;
@@ -91,6 +91,7 @@ h2{
 }
 ul{
     list-style-type: none;
+    padding:0;
     h3,p{
         font-weight: bold;
     }
@@ -111,5 +112,15 @@ ul{
     
     100%{
         opacity:1;
+    }
+}
+@media screen and (max-width: 1000px){
+    #about{
+        width:95%;
+        padding:0.5%;
+        video{
+            width:95%;
+        }
+        
     }
 }
