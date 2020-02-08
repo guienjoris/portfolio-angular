@@ -6,7 +6,7 @@ export interface Contact {
   mail: string,
   message: string
 }
-const url="/contact-post" //adresse heroku /contact
+const url="contact-post" //adresse heroku /contact
 @Injectable({
   providedIn: 'root'
 })
