@@ -7,6 +7,7 @@ export interface Contact {
   message: string
 }
 const url="contact-post" //adresse heroku /contact
+// const urllocal = 'http://localhost:8080/contact-post'
 @Injectable({
   providedIn: 'root'
 })

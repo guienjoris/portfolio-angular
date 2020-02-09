@@ -30,7 +30,7 @@ app.post('/contact-post',(req,res)=>{
         <p>De: </p> ${req.body.name} 
         <p> Adresse email: </p> ${req.body.mail} `
     }
-    transport.sendMail(mailContentMe,(error,res,req)=>{
+    transport.sendMail(mailContentMe,(error,req,res)=>{
         if(error){
             console.log("Erreur lors de l'envoi de l'email");
             console.log(error)
@@ -47,7 +47,7 @@ app.post('/contact-post',(req,res)=>{
         <p>De: </p> ${req.body.name} 
         <p> Adresse email: </p> ${req.body.mail} <p>"</p>`
     }
-    transport.sendMail(mailCopy,(error,res,req)=>{
+    transport.sendMail(mailCopy,(error,req,res)=>{
         if(error){
             console.log("Erreur lors de l'envoi de l'email");
             console.log(error)
