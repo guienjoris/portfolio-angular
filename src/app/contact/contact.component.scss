@@ -53,6 +53,18 @@
     font-weight:bold;
     
 }
+.error{
+    width:40%;
+    border-radius: 5px;
+    padding:1%;
+    background-color: rgba(255, 0, 0,0.5);
+    box-shadow:1px 1px 1px white;
+    margin-left:50%;
+    transform:translate(-50%);
+    animation-duration: 0.5s;
+    animation-name: opacityBlock;
+    font-weight:bold;
+}
 .close{
     font-family: 'Material Icons';
     font-weight: normal;

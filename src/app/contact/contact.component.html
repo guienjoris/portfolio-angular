@@ -26,13 +26,16 @@
             ></textarea>
             </mat-form-field>
             <div>
-            <button mat-raised-button color="primary" type="submit" (click)="sendMail()">Envoyer</button>
+            <button mat-raised-button color="primary" type="submit" (click)="sendMail()" [disabled]="!credentials.name || !credentials.mail || !credentials.message">Envoyer</button>
         </div>
         <div *ngIf="mailStatus === true">
           <p class="emailConfirmation">Votre mail a bien été envoyé <i class="material-icons close" (click)="close()">close
           </i> </p>
           
         </div>
+        <div>
+          <p class="error" *ngIf="this.error != null">{{error}}</p>
+      </div>
     </form>
     
     <p>Pour me contacter directement: </p>
