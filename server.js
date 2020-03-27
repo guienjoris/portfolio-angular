@@ -5,14 +5,14 @@ var cors = require('cors');
 const path = require('path');
 
 
-var mailer = require('nodemailer');
-var smtpTransport= require('nodemailer-smtp-transport')
-var transport = mailer.createTransport(smtpTransport({
-    service: "gmail",
-    auth:{
-        user: process.env.MAIL_USER,
-        pass: process.env.MAIL_MDP
-    }}));
+var mail = require('nodemailer').mail;
+// var smtpTransport= require('nodemailer-smtp-transport')
+// var transport = mailer.createTransport(smtpTransport({
+//     service: "gmail",
+//     auth:{
+//         user: process.env.MAIL_USER,
+//         pass: process.env.MAIL_MDP
+//     }}));
     app.use(express.json());
     app.use(cors());
 
@@ -27,7 +27,7 @@ app.post('/contact-post',(req,res)=>{
         <p>De: </p> ${req.body.name} 
         <p> Adresse email: </p> ${req.body.mail} `
     }
-    transport.sendMail(mailContentMe,(error,req,res)=>{
+    mail(mailContentMe,(error,req,res)=>{
         if(error){
             console.log("Erreur lors de l'envoi de l'email");
             console.log(error)
@@ -45,7 +45,7 @@ app.post('/contact-post',(req,res)=>{
         <p>De: </p> ${req.body.name} 
         <p> Adresse email: </p> ${req.body.mail} <p>"</p>`
     }
-    transport.sendMail(mailCopy,(error,req,res)=>{
+    mail(mailCopy,(error,req,res)=>{
         if(error){
             console.log("Erreur lors de l'envoi de l'email");
             console.log(error)
