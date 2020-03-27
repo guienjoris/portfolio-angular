@@ -3,7 +3,18 @@ const app = express()
 var dotenv = require('dotenv').config({path: 'private.env'})
 var cors = require('cors');
 const path = require('path');
-const sendmail = require('sendmail')();
+const sendmail = require('sendmail')({
+    logger: {
+        debug: console.log,
+        info: console.info,
+        warn: console.warn,
+        error: console.error
+      },
+      devPort: false, // Default: False
+      devHost: 'localhost', // Default: localhost
+      smtpPort: 25, // Default: 25
+      smtpHost: 'localhost' // Default: -1 - extra smtp host after resolveMX
+});
 
 
 
@@ -20,13 +31,9 @@ app.post('/contact-post',(req,res)=>{
         html: `<p>Message: ${req.body.message}</p>  
         <p>De: ${req.body.name} </p>  
         <p> Adresse email:${req.body.mail} </p>  `
-    },(error,req,res)=>{
-        if(error){
-            console.log("Erreur lors de l'envoi de l'email");
-            console.log(error)
-        }else{
-            console.log('Email envoyé avec succès!')
-        }
+    },(err , reply)=>{
+        console.log(err && err.stack);
+        console.dir(reply);
     })
 })
 app.get('/*', function(req,res) {
