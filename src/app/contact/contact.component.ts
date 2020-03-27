@@ -31,7 +31,7 @@ export class ContactComponent implements OnInit {
 
   constructor(private contactApi:ContactService) { }
   sendMail(){
-      this.contactApi.mailer(this.credentials).subscribe(data =>{
+      this.contactApi.mailer(this.credentials).subscribe((data) =>{
         console.log(data)
       }, (err) => {
         console.error(err);

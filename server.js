@@ -17,10 +17,7 @@ var transport = mailer.createTransport(smtpTransport({
     app.use(cors());
 
 app.use(express.static(__dirname + '/dist/portfolio-angular'));
-app.get('/*', function(req,res) {
-    
-    res.sendFile(path.join(__dirname+'/dist/portfolio-angular/index.html'));
-    });
+
 app.post('/contact-post',(req,res)=>{
     let mailContentMe={
         from: req.body.mail,
@@ -34,6 +31,7 @@ app.post('/contact-post',(req,res)=>{
         if(error){
             console.log("Erreur lors de l'envoi de l'email");
             console.log(error)
+            res.status(500).send({err:error})
         }else{
             console.log('Email envoyé avec succès!')
         }
@@ -51,10 +49,15 @@ app.post('/contact-post',(req,res)=>{
         if(error){
             console.log("Erreur lors de l'envoi de l'email");
             console.log(error)
+            res.status(500).send({err:error})
         }else{
             console.log('Email envoyé avec succès!')
         }
     })
 })
+app.get('/*', function(req,res) {
+    
+    res.sendFile(path.join(__dirname+'/dist/portfolio-angular/index.html'));
+    });
 
 app.listen(process.env.PORT || 8080)
