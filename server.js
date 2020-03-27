@@ -3,19 +3,15 @@ const app = express()
 var dotenv = require('dotenv').config({path: 'private.env'})
 var cors = require('cors');
 const path = require('path');
-const sendmail = require('sendmail')({
-    logger: {
-        debug: console.log,
-        info: console.info,
-        warn: console.warn,
-        error: console.error
-      },
-      devPort: false, // Default: False
-      devHost: 'localhost', // Default: localhost
-      smtpPort: 25, // Default: 25
-      smtpHost: 'localhost' // Default: -1 - extra smtp host after resolveMX
-});
-
+const mail = require('nodemailer')
+const transporter =  mail.createTransport({
+    host: 'smtp.mailtrap.io',
+    port: 2525,
+    auth:{
+        user: process.env.MAIL_USER,
+        pass: process.env.MAIL_MDP
+    }
+})
 
 
     app.use(express.json());
@@ -24,16 +20,19 @@ const sendmail = require('sendmail')({
 app.use(express.static(__dirname + '/dist/portfolio-angular'));
 
 app.post('/contact-post',(req,res)=>{
-    sendmail({
+    var mailOptions={
         from: req.body.mail,
         to: `guienjoris@gmail.com, ${req.body.mail}`,
         subject: 'Contact Portfolio',
         html: `<p>Message: ${req.body.message}</p>  
         <p>De: ${req.body.name} </p>  
         <p> Adresse email:${req.body.mail} </p>  `
-    },(err , reply)=>{
-        console.log(err && err.stack);
-        console.dir(reply);
+    }
+    transporter.sendMail(mailOptions,(err , info)=>{
+        if(error){
+            return console.log(error)
+        }
+        console.log('Message envoyé', info.messageId)
     })
 })
 app.get('/*', function(req,res) {

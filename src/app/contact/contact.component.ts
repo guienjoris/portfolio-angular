@@ -31,17 +31,10 @@ export class ContactComponent implements OnInit {
 
   constructor(private contactApi:ContactService) { }
   sendMail(){
+    console.log(this.credentials)
       this.contactApi.mailer(this.credentials).subscribe((data) =>{
         console.log(data)
-      }, (err) => {
-        console.error(err);
-        this.error = err.error.name;
-      });
-      this.mailStatus= true;
-      
-  }
-  close(){
-    this.mailStatus = false;
+      });      
   }
   ngOnInit() {
   }
