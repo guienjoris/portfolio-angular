@@ -6,7 +6,7 @@
             <input matInput placeholder="Name" name="name" [(ngModel)]="credentials.name" >
           </mat-form-field>
           <mat-form-field class="example-full-width">
-            <input matInput placeholder="Email (Pour vous envoyez une copie du mail)" [formControl]="emailFormControl"
+            <input matInput placeholder="Email " [formControl]="emailFormControl"
                    [errorStateMatcher]="matcher" [(ngModel)]="credentials.mail">
             <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
               Entrez une adresse mail valide!
