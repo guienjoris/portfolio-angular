@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CvService } from '../service/cv.service'
 
 @Component({
   selector: 'app-about',
@@ -7,9 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AboutComponent implements OnInit {
 
-  constructor() { }
+  constructor( private cv: CvService) { }
 
   ngOnInit() {
   }
-
+  cvDownload(){
+    return this.cv.downloadCV();
+  }
 }
