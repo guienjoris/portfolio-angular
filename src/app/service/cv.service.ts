@@ -10,7 +10,7 @@ export class CvService {
   constructor() { }
 
     downloadCV(){
-      const pdfUrl = "../assets/CVguienjoris-light.pdf"
+      const pdfUrl = "../assets/newCV.pdf"
       const pdfName = "CVGuienJoris.pdf"
       FileSaver.saveAs(pdfUrl,pdfName)
     }
